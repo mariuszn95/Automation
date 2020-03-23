@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32C339B3-536E-414E-96FF-3696B41254A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Automation</RootNamespace>
+    <AssemblyName>Automation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtentReports, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.4.0.3\lib\ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.2\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.2\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.2\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DriverFactory\ChromeWebDriverFactory.cs" />
+    <Compile Include="DriverFactory\DriverFactoryBase.cs" />
+    <Compile Include="DriverFactory\EdgeWebDriverFactory.cs" />
+    <Compile Include="DriverFactory\IeWebDriverFactory.cs" />
+    <Compile Include="DriverFactory\IWebDriverFactory.cs" />
+    <Compile Include="Driver\DriverSingleton.cs" />
+    <Compile Include="Elements\BasicElement.cs" />
+    <Compile Include="Elements\Basic\Button.cs" />
+    <Compile Include="Elements\Basic\Checkbox.cs" />
+    <Compile Include="Elements\Basic\Dropdown.cs" />
+    <Compile Include="Elements\Basic\Input.cs" />
+    <Compile Include="Elements\Basic\Label.cs" />
+    <Compile Include="Helpers\DataLoadStatusHelper.cs" />
+    <Compile Include="Helpers\Dom.cs" />
+    <Compile Include="Helpers\DriverHelpers\Actions.cs" />
+    <Compile Include="Helpers\DriverHelpers\DriverConsts.cs" />
+    <Compile Include="Helpers\DriverHelpers\Navigate.cs" />
+    <Compile Include="Helpers\DriverHelpers\Wait.cs" />
+    <Compile Include="Helpers\ElementHelpers.cs" />
+    <Compile Include="Helpers\Extensions\DateExtensions.cs" />
+    <Compile Include="Helpers\Extensions\RandomData.cs" />
+    <Compile Include="Helpers\JsExecutor.cs" />
+    <Compile Include="Helpers\Logger\Logger.cs" />
+    <Compile Include="Helpers\Logger\LoggerElements.cs" />
+    <Compile Include="Helpers\Logger\LoggerPage.cs" />
+    <Compile Include="Helpers\Logger\LoggerSelenium.cs" />
+    <Compile Include="Helpers\Logger\LoggerTestContexts.cs" />
+    <Compile Include="Helpers\Screenshots.cs" />
+    <Compile Include="Helpers\TestContexts.cs" />
+    <Compile Include="Helpers\TestRetryCounter.cs" />
+    <Compile Include="Models\DataLoadStatus.cs" />
+    <Compile Include="PageObject\Entities\PoVEntity.cs" />
+    <Compile Include="PageObject\Entities\ReportsEntity.cs" />
+    <Compile Include="PageObject\Entities\WidgetsEntity.cs" />
+    <Compile Include="PageObject\Locators\DisclaimerLocators.cs" />
+    <Compile Include="PageObject\Locators\MiDashboardHeader\MiDashboardHeaderLocators.cs" />
+    <Compile Include="PageObject\Locators\MiDashboardHeader\PovLocators.cs" />
+    <Compile Include="PageObject\Locators\MiDashboardHeader\SaveToMyReportsLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\FooterLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\Header\ReportSettings\AttributesLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\Header\ReportSettings\ReportSettingsLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\Header\ReportSettings\TimePeriodsLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\Header\ReportSettings\ValueTypesLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\ReportHeaderLocators.cs" />
+    <Compile Include="PageObject\Locators\Report\ReportLocators.cs" />
+    <Compile Include="PageObject\MotherShip\BusinessGroupMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\OrganizationUnitMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\PoVMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Reports\MyClient\MyClientMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Reports\MyContribution\MyContributionMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Reports\MySales\MySalesMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Reports\MyTrend\MyTrendMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Reports\ReportSettings\TimePeriodsMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Reports\ReportsMotherShip.cs" />
+    <Compile Include="PageObject\MotherShip\Widgets\WidgetsMotherShip.cs" />
+    <Compile Include="PageObject\Pages\DisclaimerPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\DocumentsPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\MiDashboardHeaderPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\MySavedReportsPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\Navigation\MyClient.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\Navigation\MyContribution.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\Navigation\MySales.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\Navigation\MyTrend.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\PovPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\ReportsMenuPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\SaveToMyReportsPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardHeader\SupportPage.cs" />
+    <Compile Include="PageObject\Pages\MiDashboardPage.cs" />
+    <Compile Include="PageObject\Pages\Report\Header\ReportSettings\AttributesPage.cs" />
+    <Compile Include="PageObject\Pages\Report\Header\ReportSettings\ReportSettingsPage.cs" />
+    <Compile Include="PageObject\Pages\Report\Header\ReportSettings\TimePeriodsPage.cs" />
+    <Compile Include="PageObject\Pages\Report\Header\ReportSettings\ValueTypesPage.cs" />
+    <Compile Include="PageObject\Pages\Report\Header\ReportsHeaderElements.cs" />
+    <Compile Include="PageObject\Pages\Report\Header\ReportsHeaderVerify.cs" />
+    <Compile Include="PageObject\Pages\Report\ReportsActions.cs" />
+    <Compile Include="PageObject\Pages\Report\Header.cs" />
+    <Compile Include="PageObject\Pages\Report\ReportsElements.cs" />
+    <Compile Include="PageObject\Pages\Report\ReportsFooterPage.cs" />
+    <Compile Include="PageObject\Pages\Report\ReportsPage.cs" />
+    <Compile Include="PageObject\Pages\Report\ReportsVerify.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestFixtures\OneTimeTearDownBase.cs" />
+    <Compile Include="TestFixtures\SetUpBase.cs" />
+    <Compile Include="TestFixtures\TearDownBase.cs" />
+    <Compile Include="TestFixtures\TestFixtureBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+  </Target>
+</Project>
