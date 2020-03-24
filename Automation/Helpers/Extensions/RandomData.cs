@@ -83,10 +83,21 @@
             return businessFunctionList[new Random().Next(businessFunctionList.Count - 1)];
         }
 
-        public static DateTime GetDateWithout()
+        public static DateTime Date(DateTime? startDateOptional = null, DateTime? endDateOptional = null)
         {
             var startDate = new DateTime(2012, 1, 1);
             var endDate = new DateTime(2027, 12, 31);
+
+            if (startDateOptional.HasValue)
+            {
+                startDate = (DateTime)startDateOptional;
+            }
+
+            if (endDateOptional.HasValue)
+            {
+                endDate = (DateTime)endDateOptional;
+            }
+            
             var hoursInRange = endDate - startDate;
             TimeSpan daysInRange = new TimeSpan(0, new Random().Next(0, (int)hoursInRange.TotalMinutes), 0);
             DateTime newDate = startDate + daysInRange;

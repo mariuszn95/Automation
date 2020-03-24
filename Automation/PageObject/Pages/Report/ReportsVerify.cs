@@ -114,7 +114,7 @@
             LoggerPage.LogEnd(MethodBase.GetCurrentMethod().Name, columnNumber);
         }
 
-        public ReportsHeaderPage AddedTimeViews(List<string> months)
+        public ReportsHeaderPage TimeViewsOnReport(List<string> months)
         {
             LoggerPage.LogStart(MethodBase.GetCurrentMethod().Name);
 

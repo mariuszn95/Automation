@@ -4,10 +4,10 @@
     using System.Collections.Generic;
     using System.Globalization;
 
+    using Automation.Helpers.Extensions;
     using Automation.PageObject.Entities;
     using Automation.PageObject.MotherShip.Reports;
     using Automation.PageObject.MotherShip.Reports.MyContribution;
-    using Automation.PageObject.MotherShip.Reports.ReportSettings;
 
     using NUnit.Framework;
 
@@ -20,42 +20,34 @@
         {
             this.SetUp(ref report, this.randomReport);
 
-            List<string> months = TimePeriodsMotherShip.Actual();
-            months.Add(ReportsMotherShip.DataLoadStatus.MyContributionRmIcTeam.AddMonths(-1).ToString("MMM yy", CultureInfo.GetCultureInfo("en-us")));
-            months.Add(ReportsMotherShip.DataLoadStatus.MyContributionRmIcTeam.ToString("MMM yy", CultureInfo.GetCultureInfo("en-us")));
-            months.Add($"{ReportsMotherShip.DataLoadStatus.MyContributionRmIcTeam.ToString("MMM yy", CultureInfo.GetCultureInfo("en-us"))} YTD");
+            var date = ReportsMotherShip.DataLoadStatus.MyContributionRmIcTeam;
+
+            List<string> months = new List<string>
+            {
+                date.AddMonths(-1).ToString("MMM yy", CultureInfo.GetCultureInfo("en-us")),
+                date.ToString("MMM yy", CultureInfo.GetCultureInfo("en-us")),
+                $"{date.ToString("MMM yy", CultureInfo.GetCultureInfo("en-us"))} YTD",
+            };
 
             this.Report
-                .Verify.AddedTimeViews(months);
+                .Verify.TimeViewsOnReport(months);
             this.Header
                 .ClickCustomizeTheReportButton()
                 .ClickTimePeriods()
                 .VerifyDefaultView()
-                //.ClickCancelButton()
+                .VerifyTimeViewsOnAppliedValues(months)
                 .ClickYtdButton()
-                .VerifyLayoutForYtdView()
-                .AddAtLeastOneTimePeriodFromMonthlyView(ref months)
-                .AddAtLeastOneTimePeriodFromYtdView(ref months)
-                .ClickSubmitButton()
-                .Verify.AddedTimeViews(months)
-                .ClickCustomizeTheReportButton()
-                .ClickTimePeriods()
-                .VerifyAddedTimeViewsOnReportSettings(months);
-
+                .ClickCancelButton();
+            this.Pov.ChangeDateTo(RandomData.Date());
+            this.Pov.ChangeDateTo(RandomData.Date(date.AddMonths(-12), date));
             this.Header
                 .ClickCustomizeTheReportButton()
                 .ClickTimePeriods()
-                .VerifyDefaultView()
-                .VerifyLayoutForMonthlyView()
-                .ClickYtdButton()
-                .VerifyLayoutForYtdView()
                 .AddAtLeastOneTimePeriodFromMonthlyView(ref months)
-                .AddAtLeastOneTimePeriodFromYtdView(ref months)
-                .ClickSubmitButton()
-                .Verify.AddedTimeViews(months)
-                .ClickCustomizeTheReportButton()
-                .ClickTimePeriods()
-                .VerifyAddedTimeViewsOnReportSettings(months);
+                .VerifyTimeViewsOnAppliedValues(months)
+                .ClickYtdButton()
+                .VerifyTimeViewsOnCalendar(months)
+                .ClickSubmitButton();
         }
 
         private static ReportsEntity RandomReport()

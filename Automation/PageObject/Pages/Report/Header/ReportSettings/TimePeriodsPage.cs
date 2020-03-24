@@ -139,7 +139,7 @@
             return this;
         }
 
-        public TimePeriodsPage VerifyAddedTimeViewsOnReportSettings(List<string> months)
+        public TimePeriodsPage VerifyTimeViewsOnAppliedValues(List<string> months)
         {
             LoggerPage.LogStart(MethodBase.GetCurrentMethod().Name);
 
@@ -151,6 +151,25 @@
                         .IsVisible();
 
                 Assert.IsTrue(validateTimePeriodInReport);
+            }
+
+            LoggerPage.LogEnd(MethodBase.GetCurrentMethod().Name);
+
+            return this;
+        }
+
+        public TimePeriodsPage VerifyTimeViewsOnCalendar(List<string> months)
+        {
+            LoggerPage.LogStart(MethodBase.GetCurrentMethod().Name);
+
+            foreach (var month in months)
+            {
+                var validateTimePeriod =
+                    new Checkbox(By.XPath(
+                            $"//*[@id='timePeriods-panel']//div[@class='applied-values__item-name' and contains(text(),'{month}')]"))
+                        .IsChecked();
+
+                Assert.IsTrue(validateTimePeriod);
             }
 
             LoggerPage.LogEnd(MethodBase.GetCurrentMethod().Name);

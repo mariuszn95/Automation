@@ -3,6 +3,7 @@
     using System.Reflection;
 
     using Automation.Elements.Basic;
+    using Automation.Helpers.DriverHelpers;
     using Automation.Helpers.Logger;
     using Automation.PageObject.Locators.Report.Header.ReportSettings;
     using Automation.PageObject.Pages.Report;
@@ -59,6 +60,7 @@
             LoggerPage.LogStart(MethodBase.GetCurrentMethod().Name);
 
             this.CancelButton.Click();
+            Wait.ForRollerOnReportsToGoAway();
 
             LoggerPage.LogEnd(MethodBase.GetCurrentMethod().Name);
 
